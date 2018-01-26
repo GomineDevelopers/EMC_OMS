@@ -1,0 +1,362 @@
+[ 2018-01-26T10:39:33+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010478s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2018-01-26T10:39:39+08:00 ] 127.0.0.1 /EMC_OMS/index.php/Index/company.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `company_distribution` [ RunTime:0.0151s ]
+SQL: SELECT DISTINCT  `province` FROM `company_distribution`  [ RunTime:0.0144s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '北京市' LIMIT 1   [ RunTime:0.0145s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '天津市' LIMIT 1   [ RunTime:0.0146s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '河北省' LIMIT 1   [ RunTime:0.0147s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '山西省' LIMIT 1   [ RunTime:0.0149s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '内蒙古自治区' LIMIT 1   [ RunTime:0.0146s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '辽宁省' LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '吉林省' LIMIT 1   [ RunTime:0.0148s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '黑龙江省' LIMIT 1   [ RunTime:0.0155s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '上海市' LIMIT 1   [ RunTime:0.0141s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '江苏省' LIMIT 1   [ RunTime:0.0149s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '浙江省' LIMIT 1   [ RunTime:0.0149s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '安徽省' LIMIT 1   [ RunTime:0.0147s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '福建省' LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '江西省' LIMIT 1   [ RunTime:0.0133s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '山东省' LIMIT 1   [ RunTime:0.0146s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '河南省' LIMIT 1   [ RunTime:0.0144s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '湖北省' LIMIT 1   [ RunTime:0.0132s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '湖南省' LIMIT 1   [ RunTime:0.0134s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '广东省' LIMIT 1   [ RunTime:0.0131s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '广西壮族自治区' LIMIT 1   [ RunTime:0.0154s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '海南省' LIMIT 1   [ RunTime:0.0147s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '四川省' LIMIT 1   [ RunTime:0.0152s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '贵州省' LIMIT 1   [ RunTime:0.0142s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '云南省' LIMIT 1   [ RunTime:0.0144s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '西藏自治区' LIMIT 1   [ RunTime:0.0148s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '重庆市' LIMIT 1   [ RunTime:0.0129s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '陕西省' LIMIT 1   [ RunTime:0.0146s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '甘肃省' LIMIT 1   [ RunTime:0.0145s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '青海省' LIMIT 1   [ RunTime:0.0132s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '宁夏回族自治区' LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '新疆维吾尔自治区' LIMIT 1   [ RunTime:0.0142s ]
+
+[ 2018-01-26T10:40:55+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000629s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011757s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001106s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001175s ]
+
+[ 2018-01-26T10:41:01+08:00 ] 127.0.0.1 /EMC_OMS/index.php/Index/company.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `company_distribution` [ RunTime:0.0149s ]
+SQL: SELECT DISTINCT  `province` FROM `company_distribution`  [ RunTime:0.0139s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '北京市' LIMIT 1   [ RunTime:0.0143s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '天津市' LIMIT 1   [ RunTime:0.0133s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '河北省' LIMIT 1   [ RunTime:0.0128s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '山西省' LIMIT 1   [ RunTime:0.0145s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '内蒙古自治区' LIMIT 1   [ RunTime:0.0126s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '辽宁省' LIMIT 1   [ RunTime:0.0139s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '吉林省' LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '黑龙江省' LIMIT 1   [ RunTime:0.0138s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '上海市' LIMIT 1   [ RunTime:0.0128s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '江苏省' LIMIT 1   [ RunTime:0.0137s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '浙江省' LIMIT 1   [ RunTime:0.0141s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '安徽省' LIMIT 1   [ RunTime:0.0141s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '福建省' LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '江西省' LIMIT 1   [ RunTime:0.0146s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '山东省' LIMIT 1   [ RunTime:0.0137s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '河南省' LIMIT 1   [ RunTime:0.0135s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '湖北省' LIMIT 1   [ RunTime:0.0143s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '湖南省' LIMIT 1   [ RunTime:0.0138s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '广东省' LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '广西壮族自治区' LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '海南省' LIMIT 1   [ RunTime:0.0251s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '四川省' LIMIT 1   [ RunTime:0.0242s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '贵州省' LIMIT 1   [ RunTime:0.0245s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '云南省' LIMIT 1   [ RunTime:0.0247s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '西藏自治区' LIMIT 1   [ RunTime:0.0210s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '重庆市' LIMIT 1   [ RunTime:0.0221s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '陕西省' LIMIT 1   [ RunTime:0.0240s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '甘肃省' LIMIT 1   [ RunTime:0.0285s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '青海省' LIMIT 1   [ RunTime:0.0253s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '宁夏回族自治区' LIMIT 1   [ RunTime:0.0128s ]
+SQL: SELECT SUM(company_no) AS tp_sum FROM `company_distribution` WHERE `province` = '新疆维吾尔自治区' LIMIT 1   [ RunTime:0.0133s ]
+
+[ 2018-01-26T10:44:28+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012204s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000934s ]
+
+[ 2018-01-26T10:46:29+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009010s ]
+
+[ 2018-01-26T10:48:17+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011042s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001403s ]
+
+[ 2018-01-26T10:48:44+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008850s ]
+
+[ 2018-01-26T10:48:58+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000586s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010810s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010865s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008948s ]
+
+[ 2018-01-26T10:49:05+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010622s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010671s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2018-01-26T10:49:17+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2018-01-26T10:51:50+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010805s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001115s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001186s ]
+
+[ 2018-01-26T10:52:17+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010423s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004228s ]
+
+[ 2018-01-26T10:52:41+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001426s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001065s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001143s ]
+
+[ 2018-01-26T10:53:02+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010487s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003251s ]
+
+[ 2018-01-26T10:53:36+08:00 ] 127.0.0.1 /EMC_OMS/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009740s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006895s ]
+
