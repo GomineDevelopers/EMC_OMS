@@ -35,4 +35,18 @@ class IndexController extends controller {
     	
     	$this->ajaxReturn($province,'JSON');
     }
+    //根据地名返回对应的经纬度
+    public function returnLngLatByLocation(){
+    	$address = !empty($_GET['location']) ? $_GET['location']:'北京市';
+    	
+    	$sk = 'B28SnTg2B6Cdw2GfaYq4KUAsfFpe7H1f';
+		$url = "http://api.map.baidu.com/geocoder/v2/?address=%s&output=json&ak=4vWwiDYUhYY3S5uLoPbZqUEz&sn=%s";
+		$querystring = "address=".$address."&output=json&ak=4vWwiDYUhYY3S5uLoPbZqUEz";  
+	    $sn =  md5(urlencode('/geocoder/v2/?'.$querystring.$sk));  
+		$target = sprintf($url, urlencode($address), $sn);
+		$html = json_decode(file_get_contents($target),true);
+		
+		$this->ajaxReturn($html,'JSON');
+    }
+    
 }
