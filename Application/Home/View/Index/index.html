@@ -19,8 +19,9 @@
 		<link rel="stylesheet" href="__PUBLIC__/css/app.css">
 		<script src="__PUBLIC__/js/echarts.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="__PUBLIC__/plugin/amazeui.tree.min.css" />
-		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=vU5MZP66PBzfA1WA9n5SxPsAl1npAbX7"></script>
-		<script src="__PUBLIC__/js/public.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4vWwiDYUhYY3S5uLoPbZqUEz"></script>
+		<script src="__PUBLIC__/js/jquery.min.js"></script>
+		
 		<style>
 			.tpl-page-header-fixed {
 				margin-top: 122px;
@@ -115,7 +116,9 @@
 	</head>
 
 	<body data-type="index">
-
+		<input type="hidden" id="publicUrl" value="__PUBLIC__">
+		<input type="hidden" id="controlerUrl" value="__CONTROLLER__">
+		
 		<header class="am-topbar  admin-header">
 			<div class="am-topbar-brand">
 				<a href="javascript:;" class="tpl-logo">
@@ -466,20 +469,22 @@
 
 		</div>
 
-		<script src="__PUBLIC__/js/jquery.min.js"></script>
+		
 		<script src="__PUBLIC__/js/disPicker.js" type="text/javascript" charset="utf-8"></script>
 		<script src="__PUBLIC__/js/amazeui.min.js"></script>
 		<script src="__PUBLIC__/js/iscroll.js"></script>
 		<script src="__PUBLIC__/js/app.js"></script>
 		
 		<script type="text/javascript" src="__PUBLIC__/plugin/amazeui.tree.min.js"></script>
+		<script src="__PUBLIC__/js/public.js"></script>
 		<script type="text/javascript">
 	// 百度地图API功能
 	var map = new BMap.Map("allmap");
-	var localSearch= new BMap.LocalSearch (map, {renderOptions: {pageCapacity: 8}});
+//	var localSearch= new BMap.LocalSearch (map, {renderOptions: {pageCapacity: 8}});
 	map.centerAndZoom(new BMap.Point(108.787213,34.478528), 5);
 	map.enableScrollWheelZoom();
-
+	
+	
 	function getBoundary(data){       
 		var bdary = new BMap.Boundary();
 		bdary.get(data.province, function(rs){       //获取行政区域
@@ -508,8 +513,8 @@
 		            var datas;
 		            datas = e;
 		            for(var i=0;i<datas.length;i++){    
-						getBoundary(datas[i]);  console.log(datas[i]['company_no'])
-						searchByStationName(datas[i]['province'],datas[i]['company_no']);
+						getBoundary(datas[i]);  
+						searchByStationName(datas[i]['province'],datas[i]['company_no']);		
 					} 
 		        }
 			});  
