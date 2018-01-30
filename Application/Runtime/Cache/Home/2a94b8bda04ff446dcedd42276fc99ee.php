@@ -11,16 +11,17 @@
 
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<link rel="icon" type="image/png" href="/EMC_OMS/Public/i/favicon.png">
-		<link rel="apple-touch-icon-precomposed" href="/EMC_OMS/Public/i/app-icon72x72@2x.png">
+		<link rel="icon" type="image/png" href="/git/EMC_OMS/Public/i/favicon.png">
+		<link rel="apple-touch-icon-precomposed" href="/git/EMC_OMS/Public/i/app-icon72x72@2x.png">
 		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
-		<link rel="stylesheet" href="/EMC_OMS/Public/css/amazeui.min.css" />
-		<link rel="stylesheet" href="/EMC_OMS/Public/css/admin.css">
-		<link rel="stylesheet" href="/EMC_OMS/Public/css/app.css">
-		<script src="/EMC_OMS/Public/js/echarts.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="/EMC_OMS/Public/plugin/amazeui.tree.min.css" />
-		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=vU5MZP66PBzfA1WA9n5SxPsAl1npAbX7"></script>
-		<script src="/EMC_OMS/Public/js/public.js"></script>
+		<link rel="stylesheet" href="/git/EMC_OMS/Public/css/amazeui.min.css" />
+		<link rel="stylesheet" href="/git/EMC_OMS/Public/css/admin.css">
+		<link rel="stylesheet" href="/git/EMC_OMS/Public/css/app.css">
+		<script src="/git/EMC_OMS/Public/js/echarts.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/git/EMC_OMS/Public/plugin/amazeui.tree.min.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4vWwiDYUhYY3S5uLoPbZqUEz"></script>
+		<script src="/git/EMC_OMS/Public/js/jquery.min.js"></script>
+		
 		<style>
 			.tpl-page-header-fixed {
 				margin-top: 122px;
@@ -107,19 +108,35 @@
 			.am-form{
 				padding-left: 20px;
 			} 
-			.paddingUserDefine{
+			.paddingUserDefine,#upgrateOne_item{
 				padding-left:0px;
 				padding-right: 0px; 
+				
+			}
+			.paddingUserDefine label {
+				font-size: 13px;
+			}
+			.tpl-left-nav-item .nav-link, .tpl-left-nav-sub-menu a {
+			    font-size: 20px;
+			    position: relative;
+			    text-shadow: none;
+			    font-weight: 300;
+			    top: 2px;
+			    margin-left: 50px;
+			    margin-right: 6px;
+			    color: #a7bdcd;
 			}
 		</style>
 	</head>
 
 	<body data-type="index">
-
+		<input type="hidden" id="publicUrl" value="/git/EMC_OMS/Public">
+		<input type="hidden" id="controlerUrl" value="/git/EMC_OMS/index.php/Home/Index">
+		
 		<header class="am-topbar  admin-header">
 			<div class="am-topbar-brand">
 				<a href="javascript:;" class="tpl-logo">
-					<img src="/EMC_OMS/Public/img/logo.png" alt="">
+					<img src="/git/EMC_OMS/Public/img/logo.png" alt="">
 				</a>
 			</div>
 			<div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
@@ -144,7 +161,7 @@
 					</li>-->
 					<li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
 						<a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-							<span class="tpl-header-list-user-ico"> <img src="/EMC_OMS/Public/img/user01.png"><span>&nbsp;数海智库</span></span>
+							<span class="tpl-header-list-user-ico"> <img src="/git/EMC_OMS/Public/img/user01.png"><span>&nbsp;数海智库</span></span>
 						</a>
 						<ul class="am-dropdown-content">
 							<li>
@@ -194,131 +211,118 @@
 						<span class="am-text-lg am-lg-text-center"><label>区域选择</label></span>
 					</div>
 					<div class="tpl-left-nav-list">
-						<ul class="am-tree am-lg-text-justify" id="firstTree">
-							<li class="am-tree-branch am-hide" data-template="treebranch">
-								<div class="am-tree-branch-header">
-									<button class="am-tree-branch-name">
-       										 <span class="am-tree-icon am-tree-icon-folder"></span>
-        									 <span class="am-tree-label"></span>
-      								</button>
-								</div>
-								<ul class="am-tree-branch-children"></ul>
-								<div class="am-tree-loader"><span class="am-icon-spin am-icon-spinner"></span></div>
-							</li>
-							<li class="am-tree-item am-hide" data-template="treeitem">
-								<button class="am-tree-item-name">
-     									 <span class="am-tree-icon am-tree-icon-item am-icon-flag"></span>
-      									<label class="am-tree-label"></label>
-      									</button>
-							</li>
-						</ul>
+						
 					</div>
 				</div>
-				<div class="tpl-left-nav-wrapper">
+				<div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+              <li class="tpl-left-nav-item">
+                <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                  <span>东区</span>
+                  <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                </a>
+                <ul class="tpl-left-nav-sub-menu">
+                  <li class="showUl">
+                    <a href="#">
+                      <span>安徽省</span>
+                    </a>
+                    <a href="#">
+                      <span>湖北省</span>
+                    </a>
+                    <a href="#">
+                      <span>湖南省</span>
+                    </a>
+                    <a href="#">
+                      <span>江苏省</span>
+                    </a>
+                    <a href="#">
+                      <span>江西省</span>
+                    </a>
+                    <a href="#">
+                      <span>上海市</span>
+                    </a>
+                    <a href="#">
+                      <span>浙江省</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-					<div class="tpl-left-nav-list">
-						<ul class="am-tree am-lg-text-justify" id="secondTree">
-							<li class="am-tree-branch am-hide" data-template="treebranch">
-								<div class="am-tree-branch-header">
-									<button class="am-tree-branch-name">
-       										 <span class="am-tree-icon am-tree-icon-folder"></span>
-        									 <span class="am-tree-label"></span>
-      								</button>
-								</div>
-								<ul class="am-tree-branch-children"></ul>
-								<div class="am-tree-loader"><span class="am-icon-spin am-icon-spinner"></span></div>
-							</li>
-							<li class="am-tree-item am-hide" data-template="treeitem">
-								<button class="am-tree-item-name">
-     									 <span class="am-tree-icon am-tree-icon-item am-icon-flag"></span>
-      									<label class="am-tree-label"></label>
-      									</button>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="tpl-left-nav-wrapper">
+              <li class="tpl-left-nav-item">
+                <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                  <span>南区</span>
+                  <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                </a>
+                <ul class="tpl-left-nav-sub-menu">
+                  <li class="showUl">
+                    <a href="#">
+                      <span>福建省</span>
+                    </a>
+                    <a href="#">
+                      <span>广东省</span>
+                    </a>
+                    <a href="#">
+                      <span>广西</span>
+                    </a>
+                    <a href="#">
+                      <span>海南省</span>
+                    </a>
+                  
+                  </li>
+                </ul>
+              </li>
 
-					<div class="tpl-left-nav-list">
-						<ul class="am-tree am-lg-text-justify" id="thirdTree">
-							<li class="am-tree-branch am-hide" data-template="treebranch">
-								<div class="am-tree-branch-header">
-									<button class="am-tree-branch-name">
-       										 <span class="am-tree-icon am-tree-icon-folder"></span>
-        									 <span class="am-tree-label"></span>
-      								</button>
-								</div>
-								<ul class="am-tree-branch-children"></ul>
-								<div class="am-tree-loader"><span class="am-icon-spin am-icon-spinner"></span></div>
-							</li>
-							<li class="am-tree-item am-hide" data-template="treeitem">
-								<button class="am-tree-item-name">
-     									 <span class="am-tree-icon am-tree-icon-item am-icon-flag"></span>
-      									<label class="am-tree-label"></label>
-      									</button>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="tpl-left-nav-wrapper">
+              <li class="tpl-left-nav-item">
+                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                  <span>西区</span>
+                  <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                </a>
+                <ul class="tpl-left-nav-sub-menu">
+                  <li class="showUl">
+                    <a href="#">
+                      <span>甘肃省</span>
 
-					<div class="tpl-left-nav-list">
-						<ul class="am-tree am-lg-text-justify" id="fourthTree">
-							<li class="am-tree-branch am-hide" data-template="treebranch">
-								<div class="am-tree-branch-header">
-									<button class="am-tree-branch-name">
-       										 <span class="am-tree-icon am-tree-icon-folder"></span>
-        									 <span class="am-tree-label"></span>
-      								</button>
-								</div>
-								<ul class="am-tree-branch-children"></ul>
-								<div class="am-tree-loader"><span class="am-icon-spin am-icon-spinner"></span></div>
-							</li>
-							<li class="am-tree-item am-hide" data-template="treeitem">
-								<button class="am-tree-item-name">
-     									 <span class="am-tree-icon am-tree-icon-item am-icon-flag"></span>
-      									<label class="am-tree-label"></label>
-      									</button>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!--<div class="tpl-left-nav-wrapper">
-					<div class="tpl-left-nav-title">
-						联系我们
-					</div>
-					<div class="tpl-left-nav-list">
-						<ul class="tpl-left-nav-menu">
-							<li class="tpl-left-nav-item">
-								<a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-									<i class="am-icon-stethoscope am-success" style="color:#0ea28b ;"></i>
-									<span>在线客服</span>
-									<i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-								</a>
+                    </a>
+                    <a href="#">
+                      <span>贵州省</span>
 
-							</li>
+                    </a>
+                    <a href="#">
+                      <span>宁夏</span>
 
-							<li class="tpl-left-nav-item">
-								<a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-									<i class="am-icon-phone-square am-secondary" style="color: #0171bc;"></i>
-									<span>电话: 86-10-87510730 </span>
-									<i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-								</a>
+                    </a>
+                    <a href="#">
+                      <span>青海省</span>
 
-							</li>
-							<li class="tpl-left-nav-item">
-								<a href="javascript:;" class="nav-link tpl-left-nav-link-list am-success ">
-									<i class="am-success am-icon-weixin " style="color:#44b549;"></i>
-									<span>关注微信公众号</span>
-									<i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-								</a>
+                    </a>
+                   <a href="#">
+                      <span>陕西省</span>
 
-							</li>
+                    </a>
+                    <a href="#">
+                      <span>四川省</span>
 
-							</li>
-						</ul>
-					</div>
-				</div>-->
+                    </a>
+                     <a href="#">
+                      <span>重庆市</span>
+
+                    </a>
+                    <a href="#">
+                      <span>云南省</span>
+
+                    </a>
+                      <a href="#">
+                      <span>新疆</span>
+                    </a>
+                    <a href="#">
+                      <span>西藏</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
 
 			</div>
 
@@ -376,9 +380,37 @@
 												<div class='am-u-md-3 paddingUserDefine'>
 												<label class="center-aligine">
         										<input type="radio"  name="doc-radio-1" class="center-aligine" value="装机公司数量"> 装机公司数量</label></div>
-        										<div class='am-u-md-3 paddingUserDefine'>
-      											<label class="center-aligine">
-        										<input type="radio"  name="doc-radio-1" class="center-aligine" value="OFFICE公司数量"> OFFICE公司数量</label></div>
+						        				<div class=" " id="upgrateOne">
+						                          <a class="nav-link tpl-left-nav-link-list" style="height: 38px;line-height: 38px;">
+						                            <span>office公司数量</span>
+						                            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fl am-margin-right "></i>
+						                          </a>
+						                        </div>
+
+						                        <div class="am-radio" id="upgrateOne_item" style="display: none;">
+						                         <div class='am-u-md-3 paddingUserDefine' ><label class="center-aligine">
+						                            <input type="radio" name="doc-radio-1" class="center-aligine" value="rs20">Roadshow 20 Cities
+						                            </label></div>
+						                          <div class='am-u-md-3 paddingUserDefine' ><label class="center-aligine">
+						                            <input type="radio" name="doc-radio-1" class="center-aligine" value="os20">Focus 20 Cities
+						                            </label></div>
+						                          <div class='am-u-md-3 paddingUserDefine' ><label class="center-aligine">
+						                            <input type="radio" name="doc-radio-1" class="center-aligine" value="os64">Focus 64 Cities
+						                            </label></div>
+						                            <div class='am-u-md-3 paddingUserDefine' ><label class="center-aligine">
+						                            <input type="radio" name="doc-radio-1" class="center-aligine" value="os108">Focus 108 Cities
+						                            </label></div>
+
+						                        </div>
+						                         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+							                        <script type="text/javascript">
+							                          $(document).ready(function() {
+							                            $("#upgrateOne").click(function() {
+							                              $("#upgrateOne_item").toggle("slow");
+							                            });
+							                          });
+							                    </script>
+        										
 											</div>
 										</form>
 
@@ -396,16 +428,19 @@
 										<form class="am-form">
 											<div class="am-radio">
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-3" class="center-aligine" value="人口密度"> 人口密度
+        										<input type="radio" name="doc-radio-3" class="center-aligine" value="人口密度"> 联系人数量
       											</label></div>
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-3" class="center-aligine" value="GDP指数"> GDP指数
+        										<input type="radio" name="doc-radio-3" class="center-aligine" value="GDP指数"> 联系人行业分布
      											 </label></div>
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-3" class="center-aligine" value="CPI指数"> CPI指数
+        										<input type="radio" name="doc-radio-3" class="center-aligine" value="CPI指数"> 装机联系人数量
       											</label></div>
       											<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-3" class="center-aligine" value="IT行业公司"> IT行业公司
+        										<input type="radio" name="doc-radio-3" class="center-aligine" value="IT行业公司"> OFFICE联系人数量
+      											</label></div>
+      											<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
+        										<input type="radio" name="doc-radio-3" class="center-aligine" value="IT行业公司"> 联系人职务分布
       											</label></div>
 											</div>
 										</form>
@@ -421,19 +456,19 @@
 								<ul class="am-dropdown-content am-dropdown-userdefine">
 									<li class="am-dropdown-header">请选择</li>
 									<li>
-										<form class="am-form">
+										<form class="am-form" >
 											<div class="am-radio">
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-4" class="center-aligine"> 人口密度
+        										<input type="radio" name="doc-radio-4" class="center-aligine"> 打开Email联系人分布
       											</label></div>
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-4" class="center-aligine" value="option2"> GDP指数
+        										<input type="radio" name="doc-radio-4" class="center-aligine" value="option2"> 点击Email联系人分布
      											 </label></div>
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-4" class="center-aligine" value="option3"> CPI指数
+        										<input type="radio" name="doc-radio-4" class="center-aligine" value="option3"> 电话Touch联系人分布
       											</label></div>
       											<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
-        										<input type="radio" name="doc-radio-4" class="center-aligine" value="option3"> IT行业公司
+        										<input type="radio" name="doc-radio-4" class="center-aligine" value="option3"> 参加活动联系人分布
       											</label></div>
 											</div>
 										</form>
@@ -466,61 +501,148 @@
 
 		</div>
 
-		<script src="/EMC_OMS/Public/js/jquery.min.js"></script>
-		<script src="/EMC_OMS/Public/js/disPicker.js" type="text/javascript" charset="utf-8"></script>
-		<script src="/EMC_OMS/Public/js/amazeui.min.js"></script>
-		<script src="/EMC_OMS/Public/js/iscroll.js"></script>
-		<script src="/EMC_OMS/Public/js/app.js"></script>
 		
-		<script type="text/javascript" src="/EMC_OMS/Public/plugin/amazeui.tree.min.js"></script>
+		<script src="/git/EMC_OMS/Public/js/disPicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/git/EMC_OMS/Public/js/amazeui.min.js"></script>
+		<script src="/git/EMC_OMS/Public/js/iscroll.js"></script>
+		<script src="/git/EMC_OMS/Public/js/app.js"></script>
+		
+		<script type="text/javascript" src="/git/EMC_OMS/Public/plugin/amazeui.tree.min.js"></script>
+		<script src="/git/EMC_OMS/Public/js/public.js"></script>
 		<script type="text/javascript">
 	// 百度地图API功能
 	var map = new BMap.Map("allmap");
-	var localSearch= new BMap.LocalSearch (map, {renderOptions: {pageCapacity: 8}});
+	map.setMapStyle({
+		  styleJson:[
+		          {
+                    "featureType": "highway",
+                    "elementType": "all",
+                    "stylers": {
+                              "visibility": "off"
+                    }
+          },
+          {
+                    "featureType": "highway",
+                    "elementType": "all",
+                    "stylers": {
+                              "hue": "#000000",
+                              "visibility": "off"
+                    }
+          }
+		]
+	});
+//	var localSearch= new BMap.LocalSearch (map, {renderOptions: {pageCapacity: 8}});
 	map.centerAndZoom(new BMap.Point(108.787213,34.478528), 5);
 	map.enableScrollWheelZoom();
-
+	
+	//省份
 	function getBoundary(data){       
 		var bdary = new BMap.Boundary();
 		bdary.get(data.province, function(rs){       //获取行政区域
+			//map.clearOverlays();        //清除地图覆盖物   
 			var count = rs.boundaries.length; //行政区域的点有多少个
-			
-          	
+			var val=$('input:radio[name="doc-radio-1"]:checked').val();
+			var num = 0.00003;
 			for (var i = 0; i < count; i++) {
-				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.company_no*0.00007}); //建立多边形覆盖物
+				if (val == '装机公司数量') {
+					data.company_no=data.compnay_IBno;
+					var num = 0.02;
+				};
+				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.company_no*num}); //建立多边形覆盖物
 				map.addOverlay(ply);  //添加覆盖物	
-			}    
+		
+			} 
+			
 		});   
 
 	}
-	 
+	//城市
+	 function getBoundaryCity(data){       
+		var bdary = new BMap.Boundary();
+		bdary.get(data.city, function(rs){       //获取行政区域
+			//map.clearOverlays();        //清除地图覆盖物   
+			var count = rs.boundaries.length; //行政区域的点有多少个
+			var num = 0.005;
+			var val=$('input:radio[name="doc-radio-1"]:checked').val();
+			for (var i = 0; i < count; i++) {
+				if (val == '装机公司数量') {
+					data.company_no=data.compnay_IBno;
+					var num = 0.2;
+				};
+				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.company_no*num}); //建立多边形覆盖物
+				map.addOverlay(ply);  //添加覆盖物	
+			} 
+			map.centerAndZoom(data.city, 8);   //调整视野   
+		});   
 
+	}
+	
 	$('.am-radio input').click(function(){
+		map.clearOverlays();        //清除地图覆盖物   
 		var valShow = $(this).val();
-		if (valShow == '公司数量') {
-
 			$.ajax({
 		        type: "post",
 		        url: "<?php echo U('Index/company');?>",
-		        data:valShow,
-
+		        data:{valShow:valShow},
 		        success:function(e){
 		            var datas;
 		            datas = e;
+		            //console.log(datas);
 		            for(var i=0;i<datas.length;i++){    
-						getBoundary(datas[i]);  console.log(datas[i]['company_no'])
-						searchByStationName(datas[i]['province'],datas[i]['company_no']);
+						getBoundary(datas[i]); 
+						if (valShow == '公司数量') {
+							searchByStationName(datas[i]['province'],datas[i]['company_no']);	
+						};
+						if (valShow == '装机公司数量') {
+							searchByStationName(datas[i]['province'],datas[i]['compnay_IBno']);
+						};
+						if (valShow == 'rs20') {
+							searchByStationName(datas[i]['province'],datas[i]['rs20']);
+						};
+						if (valShow == 'os20') {
+							searchByStationName(datas[i]['province'],datas[i]['os20']);
+						};
+						if (valShow == 'os64') {
+							searchByStationName(datas[i]['province'],datas[i]['os64']);
+						};
+						if (valShow == 'os108') {
+							searchByStationName(datas[i]['province'],datas[i]['os108']);
+						};
 					} 
 		        }
 			});  
-		};
-		if (valShow == '公司行业分布') {
-			alert($(this).val());
-		};
 	});
-	$('.am-tree-label').click(function(){
-		console.log($('.am-tree-label').html());
-		});
+	//城市
+	$('.showUl a').click(function(){
+		map.clearOverlays();        //清除地图覆盖物   
+		var showLi = $.trim($(this).first().text());
+		var val=$('input:radio[name="doc-radio-1"]:checked').val();
+		console.log(val);
+		$.ajax({
+	        type: "post",
+	        url: "<?php echo U('Index/cityCompany');?>",
+	        data:{showLi:showLi},
+	        success:function(e){
+	            var datas;
+	            datas = e;
+	            if (typeof(val) == 'undefined') {
+	            		alert('请选择指标！');
+	            }else{
+	            	 for(var i=0;i<datas.length;i++){ 
+	            	 	getBoundaryCity(datas[i]);
+						if (val == '公司数量') {
+							searchByStationName(datas[i]['city'],datas[i]['company_no']);
+						};
+						if (val == '装机公司数量') {
+							searchByStationName(datas[i]['city'],datas[i]['compnay_IBno']);
+						};
+					}
+	            }
+	           
+	        }
+		});  
+	});
+
 </script>
 	</body>
 

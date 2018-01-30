@@ -76,7 +76,7 @@ function searchByStationName(keyword,labe){
 				}
 				var label = new BMap.Label(labe, opts);  // 创建文本标注对象
 					label.setStyle({
-						 color : "red",
+						 color : "orange",
 						 fontSize : "12px",
 						 height : "20px",
 						 lineHeight : "20px",

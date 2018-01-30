@@ -18,22 +18,38 @@ class IndexController extends controller {
     	var_dump($model);
     	$this->ajaxReturn($model,'JSON');
     }
-    //2018.01.25 @young 公司分布
+    //2018.01.25 @young 省份公司分布
     public function company(){
     	$type = I('post.valShow');
-    	//var_dump($type);
-    	$province = D('company_distribution')->distinct(true)->field('province')->select();
-    	//var_dump($province);
-    	for ($i=0; $i < count($province) ; $i++) { 
-    		//var_dump($province[$i]);
-    		$model = D('company_distribution')->where($province[$i])->sum('company_no');
-    		$province[$i]['company_no'] = $model;
-    		
-    	}
-    	//header('content-type:text/html;charset=utf-8');
-    	//var_dump($province);
-    	
-    	$this->ajaxReturn($province,'JSON');
+        $dd =$infos = D('company_distribution')->field('province,SUM(company_no) AS company_no,count(compnay_IBno) AS compnay_IBno,count(RS_20_cities) as rs20,count(OS_20_cities) as os20,count(OS_64_cities) as os64,count(OS_108_cities) as os108')->/*where("RS_20_cities = 'Y' or OS_20_cities = 'Y' or OS_64_cities = 'Y' or OS_108_cities = 'Y'")->*/group('province')->select();
+       /*header('content-type:text/html;charset=utf-8');
+        var_dump($dd);*/
+    
+    	$this->ajaxReturn($dd,'JSON');
+    }
+    //城市公司分布
+    public function cityCompany(){
+        $type = I('post.showLi');
+        //var_dump($type);
+        if ($type == '宁夏') {
+            $type = '宁夏回族自治区';
+        }
+        if ($type == '广西') {
+            $type = '广西壮族自治区';
+        }
+        if ($type == '新疆') {
+            $type = '新疆维吾尔自治区';
+        }
+        if ($type == '西藏') {
+            $type = '西藏自治区';
+        }
+        //$city = D('company_distribution')->distinct(true)->field('city')->where("province = '$type'")->select();
+        $city =$infos = D('company_distribution')->field('city,SUM(company_no) AS company_no,SUM(compnay_IBno) AS compnay_IBno')->where("province = '$type'")->group('city')->select();
+       /* header('content-type:text/html;charset=utf-8');
+        echo '<pre>';
+        var_dump($city);die();
+       */
+        $this->ajaxReturn($city,'JSON');
     }
     //根据地名返回对应的经纬度
     public function returnLngLatByLocation(){
