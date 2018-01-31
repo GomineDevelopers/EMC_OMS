@@ -344,7 +344,7 @@
 									<li class="am-dropdown-header">请选择</li>
 									<li>
 										<form class="am-form">
-											<div class="am-radio">
+											<div class="am-radio" id='macroDiv'>
 												<div class='am-u-md-3 paddingUserDefine'><label class="center-aligine">
         										<input type="radio" name="doc-radio-2" class="center-aligine" value="人口密度"> 人口密度
       											</label></div>
@@ -506,7 +506,7 @@
 		<script src="__PUBLIC__/js/amazeui.min.js"></script>
 		<script src="__PUBLIC__/js/iscroll.js"></script>
 		<script src="__PUBLIC__/js/app.js"></script>
-		
+		<script src="__PUBLIC__/js/macrodata.js"></script>
 		<script type="text/javascript" src="__PUBLIC__/plugin/amazeui.tree.min.js"></script>
 		<script src="__PUBLIC__/js/public.js"></script>
 		<script type="text/javascript">
@@ -548,6 +548,39 @@
 					data.company_no=data.compnay_IBno;
 					var num = 0.02;
 				};
+				if (val == 'rs20') {
+					if (data.rs20 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.rs20;
+					};
+					var num = 0.1;
+				};
+				if (val == 'os20') {
+					if (data.os20 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.os20;
+					};
+					var num = 0.1;
+				};
+				if (val == 'os64') {
+					if (data.os64 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.os64;
+					};
+					var num = 0.1;
+				};
+				if (val == 'os108') {
+					if (data.os108 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.os108;
+					};
+					var num = 0.1;
+				};
+				
 				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.company_no*num}); //建立多边形覆盖物
 				map.addOverlay(ply);  //添加覆盖物	
 		
@@ -562,12 +595,44 @@
 		bdary.get(data.city, function(rs){       //获取行政区域
 			//map.clearOverlays();        //清除地图覆盖物   
 			var count = rs.boundaries.length; //行政区域的点有多少个
-			var num = 0.005;
+			var num = 0.0005;
 			var val=$('input:radio[name="doc-radio-1"]:checked').val();
 			for (var i = 0; i < count; i++) {
 				if (val == '装机公司数量') {
 					data.company_no=data.compnay_IBno;
 					var num = 0.2;
+				};
+				if (val == 'rs20') {
+					if (data.rs20 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.rs20;
+					};
+					var num = 0.1;
+				};
+				if (val == 'os20') {
+					if (data.os20 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.os20;
+					};
+					var num = 0.1;
+				};
+				if (val == 'os64') {
+					if (data.os64 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.os64;
+					};
+					var num = 0.1;
+				};
+				if (val == 'os108') {
+					if (data.os108 == 0) {
+						data.company_no=0.01;
+					}else{
+						data.company_no=data.os108;
+					};
+					var num = 0.1;
 				};
 				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.company_no*num}); //建立多边形覆盖物
 				map.addOverlay(ply);  //添加覆盖物	
@@ -577,7 +642,7 @@
 
 	}
 	
-	$('.am-radio input').click(function(){
+	$('#company input').click(function(){
 		map.clearOverlays();        //清除地图覆盖物   
 		var valShow = $(this).val();
 			$.ajax({
@@ -611,13 +676,12 @@
 					} 
 		        }
 			});  
-	});
 	//城市
 	$('.showUl a').click(function(){
 		map.clearOverlays();        //清除地图覆盖物   
 		var showLi = $.trim($(this).first().text());
 		var val=$('input:radio[name="doc-radio-1"]:checked').val();
-		console.log(val);
+		//console.log(val);
 		$.ajax({
 	        type: "post",
 	        url: "{:U('Index/cityCompany')}",
@@ -636,6 +700,18 @@
 						if (val == '装机公司数量') {
 							searchByStationName(datas[i]['city'],datas[i]['compnay_IBno']);
 						};
+						if (val == 'rs20') {
+							searchByStationName(datas[i]['city'],datas[i]['rs20']);
+						};
+						if (val == 'os20') {
+							searchByStationName(datas[i]['city'],datas[i]['os20']);
+						};
+						if (val == 'os64') {
+							searchByStationName(datas[i]['city'],datas[i]['os64']);
+						};
+						if (val == 'os108') {
+							searchByStationName(datas[i]['city'],datas[i]['os108']);
+						};
 					}
 	            }
 	           
@@ -643,6 +719,8 @@
 		});  
 	});
 
+	});
+	
 </script>
 	</body>
 
