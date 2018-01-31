@@ -71,7 +71,7 @@ function searchByStationName(keyword,labe){
 		    data:{"location":keyword},
 		    success:function(e){
 		        var opts = {
-				  position : new BMap.Point(e.result.location.lng,e.result.location.lat),    
+				  position : new BMap.Point(e.lng,e.lat),    
 				  offset   : new BMap.Size(-10, -10)    //设置文本偏移量
 				}
 				var label = new BMap.Label(labe, opts);  // 创建文本标注对象
