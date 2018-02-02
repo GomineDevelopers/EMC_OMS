@@ -6,10 +6,10 @@
 			var count = rs.boundaries.length; //行政区域的点有多少个
 			var val=$('input:radio[name="doc-radio-2"]:checked').val();
 			var num = 0.001;
+			//console.log(val);
 			for (var i = 0; i < count; i++) {
 				/*if (val == '人口密度') {
-					data.company_no=data.compnay_IBno;
-					var num = 0.02;
+					$('#demo').css('display','none');
 				};*/
 				
 				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.popArea*num}); //建立多边形覆盖物
@@ -27,12 +27,12 @@
 			//map.clearOverlays();        //清除地图覆盖物   
 			var count = rs.boundaries.length; //行政区域的点有多少个
 			var num = 0.0009;
-			var val=$('input:radio[name="doc-radio-2"]:checked').val();
+			//var val=$('input:radio[name="doc-radio-2"]:checked').val();
 			for (var i = 0; i < count; i++) {
-				if (val == '装机公司数量') {
+				/*if (val == '装机公司数量') {
 					data.company_no=data.compnay_IBno;
 					var num = 0.2;
-				};
+				};*/
 				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.popArea*num}); //建立多边形覆盖物
 				map.addOverlay(ply);  //添加覆盖物	
 			} 
@@ -60,6 +60,7 @@
 						
 						//console.log(popArea);
 						if (valShow == '人口密度') {
+							$('#demo').css('display','none');
 							searchByStationName(datas[i]['province'],datas[i]['popArea']);	
 						};
 						
@@ -71,7 +72,7 @@
 				map.clearOverlays();        //清除地图覆盖物   
 				var showLi = $.trim($(this).first().text());
 				var val=$('input:radio[name="doc-radio-2"]:checked').val();
-				console.log(val);
+				//console.log(val);
 				$.ajax({
 			        type: "post",
 			        url: "Index/macroCity",
@@ -79,6 +80,7 @@
 			        success:function(e){
 			            var datas;
 			            datas = e;
+			            //console.log(datas);
 			            if (typeof(val) == 'undefined') {
 			            		alert('请选择指标！');
 			            }else{
@@ -88,6 +90,7 @@
 								datas[i]['popArea'] = popArea;  
 			            	 	macroCity(datas[i]);
 								if (val == '人口密度') {
+									$('#demo').css('display','none');
 									searchByStationName(datas[i]['city'],datas[i]['popArea']);
 								};
 								

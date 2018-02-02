@@ -46,7 +46,7 @@ class IndexController extends controller {
     //2018.01.25 @young 省份公司分布
     public function company(){
     	$type = I('post.valShow');
-        $dd =$infos = D('company_distribution')->field('province,SUM(company_no) AS company_no,count(compnay_IBno) AS compnay_IBno,count(RS_20_cities="Y" or null) as rs20,count(OS_20_cities="Y" or null) as os20,count(OS_64_cities="Y" or null) as os64,count(OS_108_cities="Y" or null) as os108')->group('province')->select();
+        $dd =$infos = D()-> /*D('company_distribution')->field('province,SUM(company_no) AS company_no,SUM(company_IBno) AS company_IBno,count(RS_20_cities="Y" or null) as rs20,count(OS_20_cities="Y" or null) as os20,count(OS_64_cities="Y" or null) as os64,count(OS_108_cities="Y" or null) as os108')->group('province')->select();*/query("select *,SUM(company_no) AS company_no,SUM(company_IBno) AS company_IBno,sum(if(RS_20_cities='Y',company_no,0)) AS rs20,sum(if(OS_20_cities='Y',company_no,0)) AS os20,sum(if(os_64_cities='Y',company_no,0)) AS os64,sum(if(os_108_cities='Y',company_no,0)) AS os108 from company_distribution group by province");
        /*header('content-type:text/html;charset=utf-8');
         var_dump($dd);*/
     
@@ -68,8 +68,11 @@ class IndexController extends controller {
         if ($type == '西藏') {
             $type = '西藏自治区';
         }
-        //$city = D('company_distribution')->distinct(true)->field('city')->where("province = '$type'")->select();
-        $city =$infos = D('company_distribution')->field('city,SUM(company_no) AS company_no,SUM(compnay_IBno) AS compnay_IBno,count(compnay_IBno) AS compnay_IBno,count(RS_20_cities="Y" or null) as rs20,count(OS_20_cities="Y" or null) as os20,count(OS_64_cities="Y" or null) as os64,count(OS_108_cities="Y" or null) as os108')->where("province = '$type'")->group('city')->select();
+        if ($type == '内蒙古') {
+            $type = '内蒙古自治区';
+        }
+        //$type ='江苏省';
+        $city =$infos =D()-> /*D('company_distribution')->field('city,SUM(company_no) AS company_no,SUM(company_IBno) AS company_IBno,count(RS_20_cities="Y" or null) as rs20,count(OS_20_cities="Y" or null) as os20,count(OS_64_cities="Y" or null) as os64,count(OS_108_cities="Y" or null) as os108')->where("province = '$type'")->group('city')->select();*/query("select company_IBno_city_range,company_no_city_range,city,SUM(company_no) AS company_no,SUM(company_IBno) AS company_IBno,sum(if(RS_20_cities='Y',company_no,0)) AS rs20,sum(if(OS_20_cities='Y',company_no,0)) AS os20,sum(if(os_64_cities='Y',company_no,0)) AS os64,sum(if(os_108_cities='Y',company_no,0)) AS os108 from company_distribution where province = '$type' group by city ");
        /* header('content-type:text/html;charset=utf-8');
         echo '<pre>';
         var_dump($city);die();
@@ -111,7 +114,7 @@ class IndexController extends controller {
     		$infos = D('company_distribution')->field('*')->where("province = '".$_GET['location']."'")->select();
     		
     	}else{
-    		$infos = D('company_distribution')->field('province,SUM(company_no) AS company_no,SUM(compnay_IBno) AS compnay_IBno,SUM(electricity) AS electricity,SUM(serviceProvider) AS serviceProvider,SUM(internet) AS internet,SUM(computer) AS computer,SUM(transportation) AS transportation,SUM(financialServices) AS financialServices,SUM(researchEducation) AS researchEducation,SUM(retail) AS retail,SUM(media) AS media,SUM(energyUtilities) AS energyUtilities,SUM(wholesaleDistribution) AS wholesaleDistribution,SUM(medical) AS medical,SUM(entertainment) AS entertainment,SUM(government) AS government,SUM(manufacturing) AS manufacturing,SUM(professionalServices) AS professionalServices,SUM(Others) AS Others')->group('province')->select();
+    		$infos = D('company_distribution')->field('province,SUM(company_no) AS company_no,SUM(company_IBno) AS company_IBno,SUM(electricity) AS electricity,SUM(serviceProvider) AS serviceProvider,SUM(internet) AS internet,SUM(computer) AS computer,SUM(transportation) AS transportation,SUM(financialServices) AS financialServices,SUM(researchEducation) AS researchEducation,SUM(retail) AS retail,SUM(media) AS media,SUM(energyUtilities) AS energyUtilities,SUM(wholesaleDistribution) AS wholesaleDistribution,SUM(medical) AS medical,SUM(entertainment) AS entertainment,SUM(government) AS government,SUM(manufacturing) AS manufacturing,SUM(professionalServices) AS professionalServices,SUM(Others) AS Others')->group('province')->select();
     	}
     	for($i=0;$i<count($infos);$i++){
     		$local = ($infos[$i]['city'])?$infos[$i]['city']:$infos[$i]['province'];

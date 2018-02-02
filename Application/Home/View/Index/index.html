@@ -320,6 +320,54 @@
                   </li>
                 </ul>
               </li>
+              <li class="tpl-left-nav-item">
+                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                  <span>北区</span>
+                  <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                </a>
+                <ul class="tpl-left-nav-sub-menu">
+                  <li class="showUl">
+                    <a href="#">
+                      <span>北京市</span>
+
+                    </a>
+                    <a href="#">
+                      <span>河北省</span>
+
+                    </a>
+                    <a href="#">
+                      <span>河南省</span>
+
+                    </a>
+                    <a href="#">
+                      <span>黑龙江省</span>
+
+                    </a>
+                   <a href="#">
+                      <span>吉林省</span>
+
+                    </a>
+                    <a href="#">
+                      <span>辽宁省</span>
+
+                    </a>
+                     <a href="#">
+                      <span>内蒙古</span>
+
+                    </a>
+                    <a href="#">
+                      <span>山东省</span>
+
+                    </a>
+                      <a href="#">
+                      <span>山西省</span>
+                    </a>
+                    <a href="#">
+                      <span>天津市</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
 
@@ -369,7 +417,7 @@
 									公司分布
 								</a>
 								<ul class="am-dropdown-content am-dropdown-userdefine">
-									<li class="am-dropdown-header">请选择</li>
+									<li class="am-dropdown-header">请选择</li> 
 									<li>
 										<form class="am-form">
 											<div class="am-radio" id='company'>
@@ -482,13 +530,33 @@
 						</ul>
 					</div>
 					<div class="am-u-md-12 am-u-sm-12 row-mb">
-						<div class="tpl-portlet">
-							
+						<div class="tpl-portlet" style="padding:0px 0px;">
+							<div id='demo' style="position:absolute;left:82.55%;z-index:200;height:auto; min-height:120px; max-height:520px;bottom: 8%;border-radius:20px;">
+					            <div id='yetai' style='height:130px;width:160px; background-color:white;'>
+					            	<table id= 'tableShow'>
+						               <tr>
+						                 <td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(4594,21090]</td>
+						               </tr>
+						               <tr>
+						                 <td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(2650,4594]</td>
+						               </tr>
+						               <tr>
+						                 <td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1669,2650]</td>
+						               </tr>
+						               <tr>
+						                 <td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1094,1669] </td>
+						               </tr>
+						               <tr>
+						                 <td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(76,1094]</td>
+						               </tr>
+						             </table>
+					            </div>
+					        </div>
 
 							<!--统计图表插入点-->
-							<div class="form-content" style="height: 800px;">
+							<div class="form-content" style="height: 790px;">
 							<!-- 2018.01.25 @young -->
-								<div id="allmap" style="height: 900px;"></div>
+								<div id="allmap" style="height: 800px;"></div>
 							</div>
 							<!--统计图表插入点-->
 						</div>
@@ -496,7 +564,7 @@
 
 				</div>
 				<!--内容区域第三块-->
-
+			
 			</div>
 
 		</div>
@@ -542,11 +610,11 @@
 			//map.clearOverlays();        //清除地图覆盖物   
 			var count = rs.boundaries.length; //行政区域的点有多少个
 			var val=$('input:radio[name="doc-radio-1"]:checked').val();
-			var num = 0.00003;
+			var num = 0.00007;
 			for (var i = 0; i < count; i++) {
 				if (val == '装机公司数量') {
-					data.company_no=data.compnay_IBno;
-					var num = 0.02;
+					data.company_no=data.company_IBno;
+					var num = 0.0006;
 				};
 				if (val == 'rs20') {
 					if (data.rs20 == 0) {
@@ -554,7 +622,7 @@
 					}else{
 						data.company_no=data.rs20;
 					};
-					var num = 0.1;
+					var num = 0.0003;
 				};
 				if (val == 'os20') {
 					if (data.os20 == 0) {
@@ -562,7 +630,7 @@
 					}else{
 						data.company_no=data.os20;
 					};
-					var num = 0.1;
+					var num = 0.00007;
 				};
 				if (val == 'os64') {
 					if (data.os64 == 0) {
@@ -570,7 +638,7 @@
 					}else{
 						data.company_no=data.os64;
 					};
-					var num = 0.1;
+					var num = 0.00007;
 				};
 				if (val == 'os108') {
 					if (data.os108 == 0) {
@@ -578,7 +646,7 @@
 					}else{
 						data.company_no=data.os108;
 					};
-					var num = 0.1;
+					var num = 0.0005;
 				};
 				
 				var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 0.5, strokeColor: "#333",fillColor:"#B30000",fillOpacity:data.company_no*num}); //建立多边形覆盖物
@@ -599,8 +667,8 @@
 			var val=$('input:radio[name="doc-radio-1"]:checked').val();
 			for (var i = 0; i < count; i++) {
 				if (val == '装机公司数量') {
-					data.company_no=data.compnay_IBno;
-					var num = 0.2;
+					data.company_no=data.company_IBno;
+					var num = 0.02;
 				};
 				if (val == 'rs20') {
 					if (data.rs20 == 0) {
@@ -656,21 +724,27 @@
 		            for(var i=0;i<datas.length;i++){    
 						getBoundary(datas[i]); 
 						if (valShow == '公司数量') {
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(4594,21090]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(2650,4594]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1669,2650]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1094,1669]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(76,1094]</td></tr>");
 							searchByStationName(datas[i]['province'],datas[i]['company_no']);	
 						};
 						if (valShow == '装机公司数量') {
-							searchByStationName(datas[i]['province'],datas[i]['compnay_IBno']);
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(330,1134]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(219,330]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(129,219]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(80,129]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(11,80]</td></tr>");
+							searchByStationName(datas[i]['province'],datas[i]['company_IBno']);
 						};
 						if (valShow == 'rs20') {
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(2220,3279]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1554,2220]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1460,1554]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(933,1460]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(674,933]</td></tr>");
 							searchByStationName(datas[i]['province'],datas[i]['rs20']);
 						};
 						if (valShow == 'os20') {
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(3516,21090]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(2122,3516]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1546,2122]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1211,1546]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(733,1211]</td></tr>");
 							searchByStationName(datas[i]['province'],datas[i]['os20']);
 						};
 						if (valShow == 'os64') {
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1770,21090]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(1059,1770]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(603,1059]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(256,603]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(0,256]</td></tr>");
 							searchByStationName(datas[i]['province'],datas[i]['os64']);
 						};
 						if (valShow == 'os108') {
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(197,603]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(116,197]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(89,116]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(56,89]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>(13,56]</td></tr>");
 							searchByStationName(datas[i]['province'],datas[i]['os108']);
 						};
 					} 
@@ -689,27 +763,62 @@
 	        success:function(e){
 	            var datas;
 	            datas = e;
+	            //console.log(datas);
+	            var arr = [];
 	            if (typeof(val) == 'undefined') {
 	            		alert('请选择指标！');
 	            }else{
 	            	 for(var i=0;i<datas.length;i++){ 
 	            	 	getBoundaryCity(datas[i]);
+	            	 	//showData(datas[i]['company_no_city_range']);
 						if (val == '公司数量') {
+							var arrValue = parseInt(datas[i]['company_no_city_range'].substring(1,datas[i]['company_no_city_range'].indexOf(",")));
+							var nextValue = parseInt(datas[i]['company_no_city_range'].substring(datas[i]['company_no_city_range'].indexOf(",")+1,datas[i]['company_no_city_range'].length-1));
+
+							if($.inArray(arrValue,arr)<0){
+								arr.push(arrValue);
+							}
+							if($.inArray(nextValue,arr)<0){
+								arr.push(nextValue);
+							}
+							arr = arr.sort(function(a,b){
+								return a - b ;
+							});
+							//console.log(arr);
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[4]+","+arr[5]+"]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[3]+","+arr[4]+"]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[2]+","+arr[3]+"]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[1]+","+arr[2]+"]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[0]+","+arr[1]+"]</td></tr>");
 							searchByStationName(datas[i]['city'],datas[i]['company_no']);
 						};
 						if (val == '装机公司数量') {
-							searchByStationName(datas[i]['city'],datas[i]['compnay_IBno']);
+							var arrValue = parseInt(datas[i]['company_IBno_city_range'].substring(1,datas[i]['company_IBno_city_range'].indexOf(",")));
+							var nextValue = parseInt(datas[i]['company_IBno_city_range'].substring(datas[i]['company_IBno_city_range'].indexOf(",")+1,datas[i]['company_IBno_city_range'].length-1));
+
+							if($.inArray(arrValue,arr)<0){
+								arr.push(arrValue);
+							}
+							if($.inArray(nextValue,arr)<0){
+								arr.push(nextValue);
+							}
+							arr = arr.sort(function(a,b){
+								return a - b ;
+							});
+							//console.log(arr);
+							$('#tableShow').html("<tr><td><div style='background-color:#B30000;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[4]+","+arr[5]+"]</td></tr><tr><td><div style='background-color:#C95251;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[3]+","+arr[4]+"]</td></tr><tr><td><div style='background-color:#E1B5B3;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[2]+","+arr[3]+"]</td></tr><tr><td><div style='background-color:#EDD7D5;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[1]+","+arr[2]+"]</td></tr><tr><td><div style='background-color:#F4EFEC;display: inline-block;width:10px;height:10px;margin-left: 10px;'></td><td style='padding-left: 8px;'>("+arr[0]+","+arr[1]+"]</td></tr>");
+							searchByStationName(datas[i]['city'],datas[i]['company_IBno']);
 						};
 						if (val == 'rs20') {
+							
 							searchByStationName(datas[i]['city'],datas[i]['rs20']);
 						};
 						if (val == 'os20') {
+							
 							searchByStationName(datas[i]['city'],datas[i]['os20']);
 						};
 						if (val == 'os64') {
+							
 							searchByStationName(datas[i]['city'],datas[i]['os64']);
 						};
 						if (val == 'os108') {
+							
 							searchByStationName(datas[i]['city'],datas[i]['os108']);
 						};
 					}
@@ -719,6 +828,24 @@
 		});  
 	});
 
+	/*function showData(data){
+		var arr = [];
+		console.log(data);
+		var arrValue = parseInt(data.substring(1,data.indexOf(",")));
+		var nextValue = parseInt(data.substring(data.indexOf(",")+1,data.length-1));
+
+		if($.inArray(arrValue,arr)<0){
+			arr.push(arrValue);
+		}
+		if($.inArray(nextValue,arr)<0){
+			arr.push(nextValue);
+		}
+		arr = arr.sort(function(a,b){
+			return a - b ;
+		});
+		console.log(arr);
+
+	}*/
 	});
 	
 </script>
